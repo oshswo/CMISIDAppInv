@@ -1,0 +1,188 @@
+﻿<%@ Master Language="VB" CodeFile="Admin - Copy.master.vb" Inherits="MasterPage_Admin" %>
+
+<!DOCTYPE html>
+
+<%@ Register Src="~/Include/wucErrorMessageBox.ascx" TagName="wucError" TagPrefix="wucError" %>
+<%@ Register Src="~/Include/sFooter.ascx" TagName="sFooter" TagPrefix="uc3" %>
+<%@ Register Src="~/Include/wucMainMenuBS5.ascx" TagName="wucMainMenu" TagPrefix="uc4" %>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head runat="server">
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="Shortcut Icon" href="~/favicon.ico" type="image/x-icon" />
+    <title>CMISID APPLICATION INVENTORY</title>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.3"></script>
+
+    <asp:ContentPlaceHolder ID="cpHead" runat="server">
+
+        <link href="<%=ResolveClientUrl("~/Scripts/Bootstrap5/css/bootstrap.css")%>" rel="stylesheet" />
+        <link href="<%=ResolveClientUrl("~/Scripts/Bootstrap5/css/bootstrap.min.css")%>" rel="stylesheet" />
+        <link href="<%=ResolveClientUrl("~/Scripts/Bootstrap5/NavbarTheme/css/style.css")%>" rel="stylesheet" />
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+
+
+        <%--<script src="<%=ResolveClientUrl("~/Scripts/Bootstrap5/js/bootstrap.bundle.min.js")%>"></script>--%>
+
+        <%--<link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />--%>
+        <link href="https://getbootstrap.com/docs/5.0/examples/sidebars/sidebars.css" rel="stylesheet" />
+        <link rel="manifest" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/manifest.json" />
+
+
+    </asp:ContentPlaceHolder>
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <form id="form1" role="form" method="post" runat="server" autocomplete="off" defaultbutton="btnDoNothing">
+        <asp:Button ID="btnDoNothing" runat="server" Enabled="false" Style="display: none;" />
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+
+        <!--Main Navigation-->
+        <header>
+            <!-- Sidebar -->
+            <%--<nav
+                id="sidebarMenu"
+                class="collapse d-lg-block sidebar collapse bg-white">
+                <div class="position-sticky">
+                    <div class="list-group list-group-flush mx-3 mt-4">
+                        
+                        <a
+                            href="#"
+                            class="list-group-item list-group-item-action py-2 ripple collapsed" data-bs-toggle="collapse" data-bs-target="#menuDrop1" aria-expanded="false">
+                            <i class="fas fa-chart-area fa-fw me-3"></i><span>Webiste traffic</span>
+                        </a>
+
+                        <div class="collapse" id="menuDrop1" style="">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li><a href="#" class="link-dark rounded">New</a></li>
+                                <li><a href="#" class="link-dark rounded">Processed</a></li>
+                                <li><a href="#" class="link-dark rounded">Shipped</a></li>
+                                <li><a href="#" class="link-dark rounded">Returned</a></li>
+                            </ul>
+                        </div>
+
+                        <a
+                            href="#"
+                            class="list-group-item list-group-item-action py-2 ripple"><i class="fas fa-lock fa-fw me-3"></i><span>Password</span></a>
+
+                    </div>
+                </div>
+            </nav>--%>
+
+            <uc4:wucMainMenu ID="wucMainMenu2" runat="server" />
+
+            <!-- Sidebar -->
+
+            <!-- Navbar -->
+            <nav
+                id="main-navbar"
+                class="navbar navbar-expand-lg navbar-light bg-white fixed-bottom">
+                <!-- Container wrapper -->
+                <div class="container-fluid">
+                    <!-- Toggle button -->
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-mdb-toggle="collapse"
+                        data-mdb-target="#sidebarMenu"
+                        aria-controls="sidebarMenu"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <!-- Brand -->
+                    <a class="navbar-brand" href="#">
+                        <img
+                            src="../Images/ICTLogo.png"
+                            height="50"
+                            alt="CMISID LOGO"
+                            loading="lazy" />
+                    </a>
+
+                    <span>CMISID APPLICATION INVENTORY</span>
+                    <!-- Copyright -->
+                    <div class="text-center" style="background-color: rgba(0, 0, 0, 0.2);">
+                        © 2023 Copyright:
+                      <a class="text-white" href="#">CMISID</a>
+                    </div>
+                    <!-- Copyright -->
+                    <!-- Right links -->
+                    <ul class="navbar-nav ms-auto d-flex flex-row">
+                    </ul>
+                </div>
+                <!-- Container wrapper -->
+            </nav>
+            <!-- Navbar -->
+
+        </header>
+        <!--Main Navigation-->
+
+        <!--Main layout - CONTENT-->
+        <main style="margin-top: 58px">
+           <div class="container pt-4">
+                 <asp:ContentPlaceHolder ID="cpConTent" runat="server">
+               </asp:ContentPlaceHolder>
+          
+           </div>
+       </main>
+        <!--Main layout-->
+
+        <!-- ======= Footer ======= -->
+
+        <!-- Footer -->
+        <section class="">
+            <!-- Footer -->
+            <footer class="text-center text-white" style="background-color: #0a4275;">
+                <!-- Grid container -->
+                <div class="container p-4 pb-0">
+                    <!-- Section: CTA -->
+                    <section class="">
+                        <p class="d-flex justify-content-center align-items-center">
+                            <span class="me-3">DETAILS HERE</span>
+                        </p>
+                    </section>
+                    <!-- Section: CTA -->
+                </div>
+                <!-- Grid container -->
+
+                <!-- Copyright -->
+                <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                    © 2023 Copyright:
+               <a class="text-white" href="#">CMISID</a>
+                </div>
+                <!-- Copyright -->
+            </footer>
+            <!-- Footer -->
+        </section>
+
+        <!-- End Footer -->
+
+
+    </form>
+
+    <script src="<%=ResolveClientUrl("~/Scripts/Bootstrap5/js/bootstrap.min.js")%>"></script>
+    <script defer="defer" src="https://getbootstrap.com/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script defer="defer" src="https://getbootstrap.com/docs/5.0/examples/sidebars/sidebars.js"></script>
+</body>
+</html>
