@@ -97,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `tbl_cms_menu` (
   PRIMARY KEY (`menu_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=98 DEFAULT CHARSET=utf8;
 
--- Dumping data for table db_appinv.tbl_cms_menu: ~27 rows (approximately)
+-- Dumping data for table db_appinv.tbl_cms_menu: ~18 rows (approximately)
 /*!40000 ALTER TABLE `tbl_cms_menu` DISABLE KEYS */;
 INSERT INTO `tbl_cms_menu` (`menu_id`, `parent_id`, `menu_name`, `page_url`, `menu_level`, `sort_order`, `is_public`, `is_active`, `system_module`, `last_user`, `last_date`, `module`) VALUES
 	(1, 0, 'Administration', '', 1, 99, 'N', 'Y', 1, 'System Administrator', '09/16/2020 4:20:21 PM', 'CMISID'),
@@ -130,7 +130,7 @@ CREATE TABLE IF NOT EXISTS `tbl_login_log` (
   PRIMARY KEY (`trans_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table db_appinv.tbl_login_log: ~0 rows (approximately)
+-- Dumping data for table db_appinv.tbl_login_log: ~1 rows (approximately)
 /*!40000 ALTER TABLE `tbl_login_log` DISABLE KEYS */;
 INSERT INTO `tbl_login_log` (`trans_id`, `user_id`, `login_ip`, `login_datetime`, `login_status`) VALUES
 	('0110202301125047FCEBA9213B418FA32D4CBC7', 'admin', '::1', '2023-01-10 12:01:50', 'SUCCESS');
@@ -233,7 +233,7 @@ CREATE TABLE IF NOT EXISTS `tbl_system_default` (
   `default_value` longtext
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table db_appinv.tbl_system_default: ~7 rows (approximately)
+-- Dumping data for table db_appinv.tbl_system_default: ~6 rows (approximately)
 /*!40000 ALTER TABLE `tbl_system_default` DISABLE KEYS */;
 INSERT INTO `tbl_system_default` (`default_desc`, `default_value`) VALUES
 	('default password', 'tl9UUtoyQm2uzSorsCfAEg=e0ea150034825421a'),
@@ -262,7 +262,7 @@ CREATE TABLE IF NOT EXISTS `tbl_user_access_permission` (
   PRIMARY KEY (`user_permission_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5347 DEFAULT CHARSET=utf8;
 
--- Dumping data for table db_appinv.tbl_user_access_permission: ~285 rows (approximately)
+-- Dumping data for table db_appinv.tbl_user_access_permission: ~292 rows (approximately)
 /*!40000 ALTER TABLE `tbl_user_access_permission` DISABLE KEYS */;
 INSERT INTO `tbl_user_access_permission` (`user_permission_id`, `user_role_id`, `user_id`, `menu_id`, `page_url`, `can_access`, `can_create`, `can_update`, `can_delete`, `can_report`, `can_export`, `last_user`, `last_date`) VALUES
 	(497, '4', NULL, 1, '&nbsp;', 'Y', 'N', 'N', 'N', 'N', 'N', 'System Administrator', '6/24/2014 2:18:01 PM'),
@@ -570,7 +570,7 @@ CREATE TABLE IF NOT EXISTS `tbl_user_info` (
   `last_date` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table db_appinv.tbl_user_info: ~2 rows (approximately)
+-- Dumping data for table db_appinv.tbl_user_info: ~3 rows (approximately)
 /*!40000 ALTER TABLE `tbl_user_info` DISABLE KEYS */;
 INSERT INTO `tbl_user_info` (`user_id`, `user_name`, `user_role_id`, `user_password`, `is_active`, `last_user`, `last_date`) VALUES
 	('admin', 'System Administrator', 1, 'Jzh3JxjBHfUm7X2gxsMbWg=ce3046478f50b4b56', 'Y', 'INITIALIZED', '4/17/2014 10:29:54 AM'),
